@@ -49,6 +49,7 @@ export const createAuth = (ctx: GenericCtx<DataModel>) => {
   return betterAuth({
     baseURL: envConfig.siteUrl,
     database: authComponent.adapter(ctx),
+    trustedOrigins: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
     // Google OAuth
     socialProviders: {
       google: {

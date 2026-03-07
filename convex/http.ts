@@ -23,7 +23,11 @@ http.route({
   }),
 })
 
-// Register Better Auth routes
-authComponent.registerRoutes(http, createAuth)
+// Register Better Auth routes with CORS for cross-origin auth requests
+authComponent.registerRoutes(http, createAuth, {
+  cors: {
+    allowedOrigins: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
+  },
+})
 
 export default http

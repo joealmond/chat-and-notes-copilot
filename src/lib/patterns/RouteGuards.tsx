@@ -29,7 +29,7 @@ import { useSession } from '@/lib/auth-client'
 import { useAdmin } from '@/hooks/use-admin'
 import type { ReactElement, ReactNode } from 'react'
 
-type RedirectTarget = '/' | '/files' | '/dashboard' | '.' | '..'
+type RedirectTarget = '/' | '/notes' | '/chat' | '/publish' | '.' | '..'
 
 /**
  * Require Authentication Guard

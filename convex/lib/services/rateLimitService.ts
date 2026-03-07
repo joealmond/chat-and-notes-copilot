@@ -61,6 +61,13 @@ export const RATE_LIMIT_DEFS = {
 
   // Email: 10 per hour
   sendEmail: { kind: 'token bucket' as const, rate: 10, period: 3_600_000, capacity: 10 },
+
+  // Notes: auto-save is frequent
+  createNote: { kind: 'token bucket' as const, rate: 10, period: 60_000, capacity: 15 },
+  updateNote: { kind: 'token bucket' as const, rate: 30, period: 60_000, capacity: 50 },
+
+  // Chat channels
+  createChannel: { kind: 'token bucket' as const, rate: 5, period: 60_000, capacity: 5 },
 }
 
 export type RateLimitName = keyof typeof RATE_LIMIT_DEFS

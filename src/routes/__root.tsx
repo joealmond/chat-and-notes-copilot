@@ -5,8 +5,6 @@ import { ConvexBetterAuthProvider } from '@convex-dev/better-auth/react'
 import { Toaster } from 'sonner'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { ImpersonateProvider } from '@/hooks/use-impersonate'
-import { AdminToolbar } from '@/components/AdminToolbar'
-import { ThemeToggle } from '@/components/ThemeToggle'
 import { authClient } from '@/lib/auth-client'
 import { getToken } from '@/lib/auth-server'
 import type { QueryClient } from '@tanstack/react-query'
@@ -27,8 +25,8 @@ export const Route = createRootRouteWithContext<{
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Convex + TanStack + Cloudflare' },
-      { name: 'description', content: 'Production-ready full-stack template' },
+      { title: 'Workspace' },
+      { name: 'description', content: 'Notes, Chat & Publishing' },
     ],
     links: [{ rel: 'icon', href: '/favicon.ico' }],
     scripts: [
@@ -73,8 +71,6 @@ function RootComponent() {
             <ErrorBoundary>
               <Outlet />
             </ErrorBoundary>
-            <ThemeToggle />
-            <AdminToolbar />
             <Toaster />
           </ImpersonateProvider>
           <Scripts />
